@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/college")
+@RequestMapping("/college")
 public class CollegeController {
 
     private CollegeRepository collegeRepository;

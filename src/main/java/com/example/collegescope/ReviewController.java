@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/review")
+@RequestMapping("/api/reviews")
+@CrossOrigin(origins = "http://localhost:5173")
 public class ReviewController {
     private final ReviewRepository reviewRepository;
     private final CollegeRepository collegeRepository;
-
 
     public ReviewController(ReviewRepository reviewRepository, CollegeRepository collegeRepository) {
         this.reviewRepository = reviewRepository;
@@ -29,14 +29,10 @@ public class ReviewController {
 
     @PostMapping("/college/{collegeId}")
     public Review addReview(@PathVariable long collegeId, @RequestBody Review review) {
-
         College college = collegeRepository.findById(collegeId)
                 .orElseThrow(() -> new RuntimeException("College Not Found"));
 
-
         review.setCollege(college);
-
-
         return reviewRepository.save(review);
     }
 

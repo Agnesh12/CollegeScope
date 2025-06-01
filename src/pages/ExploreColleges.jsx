@@ -22,7 +22,7 @@ function ExploreColleges() {
   const [success, setSuccess] = useState("");
 
   useEffect(() => {
-    // Animation logic (optional)
+    
     const cards = document.querySelectorAll(".college-card");
     cards.forEach((card, i) => {
       card.style.opacity = 0;
@@ -34,7 +34,7 @@ function ExploreColleges() {
         card.style.transform = "translateY(0)";
       }, 150 * i);
     });
-  }, [colleges]); // Run animation when colleges change
+  }, [colleges]); 
 
   const handleChange = (e) => {
     setNewCollege({ ...newCollege, [e.target.name]: e.target.value });
@@ -47,7 +47,7 @@ function ExploreColleges() {
     setSuccess("");
 
     try {
-      // Replace with your backend API URL
+     
       const response = await fetch("http://localhost:8080/api/colleges", {
         method: "POST",
         headers: {
@@ -62,7 +62,7 @@ function ExploreColleges() {
 
       const savedCollege = await response.json();
 
-      // Add newly saved college to the list
+      
       setColleges((prev) => [...prev, savedCollege]);
 
       setNewCollege({ name: "", description: "" });
@@ -80,7 +80,7 @@ function ExploreColleges() {
         Explore Colleges
       </h1>
 
-      {/* College list */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
         {colleges.map((college, idx) => (
           <div
@@ -97,7 +97,7 @@ function ExploreColleges() {
         ))}
       </div>
 
-      {/* Add college form */}
+    
       <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg">
         <h2 className="text-2xl font-semibold mb-6 text-center text-blue-800">Add New College</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">

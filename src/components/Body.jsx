@@ -23,7 +23,7 @@ function Body() {
 
   async function fetchColleges() {
     try {
-      const res = await fetch("http://localhost:8080/college"); // Update URL if needed
+      const res = await fetch("http://localhost:8080/college"); 
       if (!res.ok) throw new Error("Failed to fetch colleges");
       const data = await res.json();
       setColleges(data);
@@ -32,7 +32,6 @@ function Body() {
     }
   }
 
-  // Filter colleges by name or location based on search input
   const filteredColleges = colleges.filter(
     (college) =>
       college.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -41,10 +40,10 @@ function Body() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-gray-100">
-      {/* ... existing code ... */}
+    
 
       <section className="relative">
-        {/* Hero image & text omitted for brevity */}
+        
 
         <div
           ref={heroRef}
@@ -79,7 +78,7 @@ function Body() {
         </div>
       </section>
 
-      {/* Display filtered colleges */}
+      
       <section className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10 px-4">
         {filteredColleges.length > 0 ? (
           filteredColleges.map((college) => (

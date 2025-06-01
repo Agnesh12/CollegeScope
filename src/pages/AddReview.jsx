@@ -10,7 +10,7 @@ function AddReview() {
   const [colleges, setColleges] = useState([]);
   const [message, setMessage] = useState("");
 
-  // Fetch list of colleges from backend
+ 
   useEffect(() => {
     fetch("http://localhost:8080/api/colleges")
       .then((res) => {
@@ -24,7 +24,6 @@ function AddReview() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Find the college object matching the typed college name
     const matchedCollege = colleges.find(
       (college) => college.name.toLowerCase() === collegeName.toLowerCase()
     );
@@ -34,7 +33,7 @@ function AddReview() {
       return;
     }
 
-    // Build review object to send
+   
     const review = {
       reviewerName,
       comment,
@@ -43,7 +42,6 @@ function AddReview() {
       placementRating: Number(placementRating),
     };
 
-    // POST review to backend (corrected URL)
     fetch(`http://localhost:8080/api/reviews/college/${matchedCollege.id}`, {
       method: "POST",
       headers: {
@@ -57,7 +55,7 @@ function AddReview() {
       })
       .then(() => {
         setMessage("Review submitted successfully!");
-        // Reset form fields
+       
         setReviewerName("");
         setComment("");
         setFacultyRating("");

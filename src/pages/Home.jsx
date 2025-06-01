@@ -4,7 +4,7 @@ function Home() {
     return (
         <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-gray-100 flex flex-col">
             
-            {/* Hero Section */}
+           
             <section className="flex flex-col items-center justify-center py-20 px-4 text-center bg-white shadow-md rounded-b-3xl animate-fade-in">
                 <h1 className="text-5xl font-extrabold text-blue-700 mb-4 animate-slide-down">Welcome to CollegeScope</h1>
                 <p className="text-lg text-gray-600 mb-8 max-w-2xl animate-fade-in-delay">
@@ -18,7 +18,7 @@ function Home() {
                 </a>
             </section>
 
-            {/* Features Section */}
+           
             <section id="features" className="py-16 px-4 max-w-5xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-blue-800 mb-10 animate-fade-in">Features</h2>
                 <div className="grid md:grid-cols-3 gap-8">
@@ -46,7 +46,7 @@ function Home() {
                 </div>
             </section>
 
-            {/* Call to Action Section */}
+           
             <section className="py-12 bg-blue-50 flex flex-col items-center animate-fade-in">
                 <h2 className="text-2xl font-bold text-blue-700 mb-4">Ready to find your college?</h2>
                 <a
@@ -57,12 +57,12 @@ function Home() {
                 </a>
             </section>
 
-            {/* Footer */}
+           
             <footer className="mt-auto py-6 bg-white border-t text-center text-gray-500 text-sm animate-fade-in">
                 &copy; {new Date().getFullYear()} CollegeScope. All rights reserved.
             </footer>
 
-            {/* Animations */}
+          
             <style>
                 {`
                 @keyframes fadeIn {

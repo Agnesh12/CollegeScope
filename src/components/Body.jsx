@@ -91,7 +91,7 @@ function Body() {
         )}
       </section>
 
-      {/* ... existing feature & CTA sections ... */}
+     
     </div>
   );
 }
@@ -106,6 +106,5 @@ function CollegeCard({ college }) {
   );
 }
 
-// ... FeatureCard component as before
 
 export default Body;
